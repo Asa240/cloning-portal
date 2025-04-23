@@ -1,0 +1,2911 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Template Marketplace</title>
+<!-- Material Icons Font -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+    :root {
+      /* Garden color variables */
+      --zd-color-white: #FFFFFF;
+      --zd-color-grey-100: #F8F9F9;
+      --zd-color-grey-200: #E9EBED;
+      --zd-color-grey-300: #D8DCDE;
+      --zd-color-grey-400: #C2C8CC;
+      --zd-color-grey-500: #87929D;
+      --zd-color-grey-600: #68737D;
+      --zd-color-grey-700: #49545C;
+      --zd-color-grey-800: #2F3941;
+      --zd-color-blue-100: #EDF7FF;
+      --zd-color-blue-200: #CEE2F2;
+      --zd-color-blue-300: #9CC7F3;
+      --zd-color-blue-400: #5293C7;
+      --zd-color-blue-500: #337AB7;
+      --zd-color-blue-600: #1F73B7;
+      --zd-color-blue-700: #144A75;
+      --zd-color-blue-800: #0F3554;
+      --zd-color-kale-100: #EEF8F8;
+      --zd-color-kale-200: #D5EEEE;
+      --zd-color-kale-300: #ABC9C9;
+      --zd-color-kale-400: #82A3A3;
+      --zd-color-kale-500: #5B8A8A;
+      --zd-color-kale-600: #03363D;
+      --zd-color-kale-700: #022B30;
+      --zd-color-kale-800: #012024;
+      --zd-color-red-100: #FFF0F1;
+      --zd-color-red-200: #F5D5D8;
+      --zd-color-red-300: #F5B5BA;
+      --zd-color-red-400: #E35B66;
+      --zd-color-red-500: #D93F4C;
+      --zd-color-red-600: #CC3340;
+      --zd-color-red-700: #8C232C;
+      --zd-color-red-800: #681219;
+      --zd-color-green-100: #EDF8F4;
+      --zd-color-green-200: #D1E8DF;
+      --zd-color-green-300: #AECFC2;
+      --zd-color-green-400: #5EAA91;
+      --zd-color-green-500: #228F67;
+      --zd-color-green-600: #038153;
+      --zd-color-green-700: #186146;
+      --zd-color-green-800: #0B3B29;
+      --zd-color-yellow-100: #FFF7ED;
+      --zd-color-yellow-200: #FFEEDB;
+      --zd-color-yellow-300: #FED6A8;
+      --zd-color-yellow-400: #FFBA43;
+      --zd-color-yellow-500: #F5A623;
+      --zd-color-yellow-600: #E37B0E;
+      --zd-color-yellow-700: #974E0C;
+      --zd-color-yellow-800: #6D3A06;
+      
+      /* Garden typography variables */
+      --zd-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      --zd-font-weight-regular: 400;
+      --zd-font-weight-medium: 500;
+      --zd-font-weight-semibold: 600;
+      --zd-font-weight-bold: 700;
+      
+      /* Garden spacing variables */
+      --zd-spacing-xs: 4px;
+      --zd-spacing-sm: 8px;
+      --zd-spacing-md: 16px;
+      --zd-spacing-lg: 24px;
+      --zd-spacing-xl: 32px;
+      --zd-spacing-xxl: 40px;
+      
+      /* Garden border variables */
+      --zd-border-radius-sm: 4px;
+      --zd-border-radius-md: 6px;
+    }
+    
+    .header {
+      display: none !important;
+    }
+    
+    body {
+      font-family: var(--zd-font-family);
+      margin: 0;
+      padding: 0;
+      color: var(--zd-color-grey-800);
+      background-color: var(--zd-color-grey-100);
+      line-height: 1.5;
+    }
+    
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: var(--zd-spacing-xl);
+    }
+    
+    /* Header styles */
+    .header-custom {
+      margin-bottom: var(--zd-spacing-xl);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .header-custom h1 {
+      font-size: 28px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-sm);
+    }
+    
+    .header-custom p {
+      font-size: 16px;
+      color: var(--zd-color-grey-600);
+      max-width: 700px;
+      margin: 0 auto var(--zd-spacing-xl);
+      text-align: center;
+    }
+    
+    /* Top navigation */
+    .top-nav {
+      display: flex;
+      border-bottom: 1px solid var(--zd-color-grey-300);
+      margin-bottom: var(--zd-spacing-xl);
+      width: 100%;
+    }
+    
+    .nav-tab {
+      padding: var(--zd-spacing-md) var(--zd-spacing-xl);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-grey-700);
+      cursor: pointer;
+      position: relative;
+      background: none;
+      border: none;
+    }
+    
+    .nav-tab:hover {
+      color: var(--zd-color-grey-800);
+    }
+    
+    .nav-tab.active {
+      color: var(--zd-color-kale-600);
+      font-weight: var(--zd-font-weight-semibold);
+    }
+    
+    .nav-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--zd-color-kale-600);
+    }
+    
+    /* Controls styles */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: var(--zd-spacing-xl);
+    }
+    
+    /* Garden-styled tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--zd-spacing-xs);
+      margin-bottom: var(--zd-spacing-lg);
+      border-bottom: 1px solid var(--zd-color-grey-300);
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .filter-tab {
+      padding: var(--zd-spacing-sm) var(--zd-spacing-lg);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-grey-700);
+      cursor: pointer;
+      position: relative;
+      background: none;
+      border: none;
+    }
+    
+    .filter-tab:hover {
+      color: var(--zd-color-grey-800);
+    }
+    
+    .filter-tab.active {
+      color: var(--zd-color-kale-600);
+      font-weight: var(--zd-font-weight-semibold);
+    }
+    
+    .filter-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--zd-color-kale-600);
+    }
+    
+    /* Garden-styled search */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--zd-spacing-xl);
+      flex-wrap: wrap;
+    }
+
+    .search-wrapper {
+      position: relative;
+      max-width: 400px;
+      flex: 1;
+      margin-left: auto;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: var(--zd-spacing-sm) var(--zd-spacing-sm) var(--zd-spacing-sm) var(--zd-spacing-xl);
+      font-size: 14px;
+      border: 1px solid var(--zd-color-grey-400);
+      border-radius: var(--zd-border-radius-sm);
+      background-color: var(--zd-color-white);
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--zd-color-blue-600);
+      box-shadow: 0 0 0 3px rgba(31, 115, 183, 0.25);
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: var(--zd-spacing-sm);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--zd-color-grey-500);
+    }
+    
+    /* Template grid styles */
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--zd-spacing-lg);
+    }
+    
+    /* Garden-styled cards */
+    .template-card {
+      background-color: var(--zd-color-white);
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .template-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .template-card:focus-within {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(31, 115, 183, 0.25);
+      outline: none;
+    }
+    
+    .template-preview {
+      height: 140px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Template icons */
+    .icon-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+    
+    .template-card:hover .icon-circle {
+      transform: scale(1.1);
+    }
+    
+    /* Background colors matching Zendesk Garden palette */
+    .bg-retail {
+      background-color: var(--zd-color-blue-100);
+    }
+    
+    .bg-retail .icon-circle {
+      background-color: var(--zd-color-blue-200);
+    }
+    
+    .bg-retail .material-icons {
+      color: var(--zd-color-blue-700);
+    }
+    
+    .bg-tech {
+      background-color: var(--zd-color-kale-100);
+    }
+    
+    .bg-tech .icon-circle {
+      background-color: var(--zd-color-kale-200);
+    }
+    
+    .bg-tech .material-icons {
+      color: var(--zd-color-kale-600);
+    }
+    
+    .bg-travel {
+      background-color: var(--zd-color-green-100);
+    }
+    
+    .bg-travel .icon-circle {
+      background-color: var(--zd-color-green-200);
+    }
+    
+    .bg-travel .material-icons {
+      color: var(--zd-color-green-600);
+    }
+    
+    .bg-finance {
+      background-color: var(--zd-color-yellow-100);
+    }
+    
+    .bg-finance .icon-circle {
+      background-color: var(--zd-color-yellow-200);
+    }
+    
+    .bg-finance .material-icons {
+      color: var(--zd-color-yellow-700);
+    }
+    
+    .bg-healthcare {
+      background-color: var(--zd-color-red-100);
+    }
+    
+    .bg-healthcare .icon-circle {
+      background-color: var(--zd-color-red-200);
+    }
+    
+    .bg-healthcare .material-icons {
+      color: var(--zd-color-red-700);
+    }
+    
+    /* Badge */
+    .template-badge {
+      position: absolute;
+      top: var(--zd-spacing-sm);
+      right: var(--zd-spacing-sm);
+      font-size: 12px;
+      font-weight: var(--zd-font-weight-semibold);
+      padding: 2px var(--zd-spacing-sm);
+      border-radius: 100px;
+      z-index: 1;
+    }
+    
+    .badge-popular {
+      background-color: var(--zd-color-green-600);
+      color: var(--zd-color-white);
+    }
+    
+    .badge-new {
+      background-color: var(--zd-color-blue-600);
+      color: var(--zd-color-white);
+    }
+    
+    .template-info {
+      padding: var(--zd-spacing-lg);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .template-title {
+      font-size: 16px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-xs);
+    }
+    
+    .template-subtitle {
+      font-size: 14px;
+      color: var(--zd-color-grey-600);
+      margin-bottom: var(--zd-spacing-md);
+      flex-grow: 1;
+    }
+    
+    /* Garden-styled tags */
+    .template-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--zd-spacing-xs);
+      margin-bottom: var(--zd-spacing-md);
+    }
+    
+    .feature-tag {
+      font-size: 12px;
+      padding: 2px var(--zd-spacing-sm);
+      background-color: var(--zd-color-grey-200);
+      border-radius: 100px;
+      color: var(--zd-color-grey-700);
+      font-weight: var(--zd-font-weight-medium);
+    }
+    
+    /* Garden-styled button */
+    .template-button {
+      width: 100%;
+      padding: var(--zd-spacing-sm) var(--zd-spacing-md);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-white);
+      background-color: var(--zd-color-kale-600);
+      border: none;
+      border-radius: var(--zd-border-radius-sm);
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .template-button:hover {
+      background-color: var(--zd-color-kale-700);
+    }
+    
+    .template-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(3, 54, 61, 0.25);
+    }
+    
+    /* Empty state styles */
+    .empty-state {
+      text-align: center;
+      background-color: var(--zd-color-white);
+      border-radius: var(--zd-border-radius-sm);
+      padding: var(--zd-spacing-xxl);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    
+    .empty-state h2 {
+      font-size: 18px;
+      font-weight: var(--zd-font-weight-semibold);
+      margin-bottom: var(--zd-spacing-sm);
+      color: var(--zd-color-grey-800);
+    }
+    
+    .empty-state p {
+      font-size: 14px;
+      color: var(--zd-color-grey-600);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: none;
+      overflow-y: auto;
+      padding: var(--zd-spacing-xl);
+    }
+    
+    .modal-container {
+      background-color: var(--zd-color-white);
+      max-width: 800px;
+      margin: var(--zd-spacing-xl) auto;
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+      overflow: hidden;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--zd-spacing-lg) var(--zd-spacing-xl);
+      border-bottom: 1px solid var(--zd-color-grey-300);
+    }
+    
+    .modal-title {
+      font-size: 18px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+    }
+    
+    .close-modal {
+      background: none;
+      border: none;
+      color: var(--zd-color-grey-600);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+    
+    .close-modal:hover {
+      color: var(--zd-color-grey-800);
+    }
+    
+    .modal-preview {
+      height: 300px;
+      overflow: hidden;
+      background-color: var(--zd-color-grey-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-preview img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .modal-content {
+      padding: var(--zd-spacing-xl);
+    }
+    
+    .template-description {
+      font-size: 14px;
+      color: var(--zd-color-grey-700);
+      margin-bottom: var(--zd-spacing-xl);
+      line-height: 1.6;
+    }
+    
+    /* Configuration section */
+    .configuration-section {
+      margin-bottom: var(--zd-spacing-xl);
+    }
+    
+    .section-title {
+      font-size: 16px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-md);
+      padding-bottom: var(--zd-spacing-xs);
+      border-bottom: 1px solid var(--zd-color-grey-300);
+    }
+    
+    /* Checkbox styles */
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--zd-spacing-md) var(--zd-spacing-xl);
+      margin-bottom: var(--zd-spacing-lg);
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .checkbox-container {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--zd-color-grey-700);
+      margin-bottom: var(--zd-spacing-sm);
+    }
+    
+    .checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      background-color: var(--zd-color-white);
+      border: 1px solid var(--zd-color-grey-400);
+      border-radius: 3px;
+    }
+    
+    .checkbox-container:hover input ~ .checkmark {
+      border-color: var(--zd-color-grey-600);
+    }
+    
+    .checkbox-container input:checked ~ .checkmark {
+      background-color: var(--zd-color-kale-600);
+      border-color: var(--zd-color-kale-600);
+    }
+    
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    .checkbox-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    .checkbox-container .checkmark:after {
+      left: 6px;
+      top: 2px;
+      width: 3px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    
+    /* Date picker */
+    .date-range {
+      display: flex;
+      gap: var(--zd-spacing-md);
+      margin-top: var(--zd-spacing-xs);
+    }
+    
+    .date-input {
+      padding: var(--zd-spacing-xs) var(--zd-spacing-sm);
+      border: 1px solid var(--zd-color-grey-400);
+      border-radius: var(--zd-border-radius-sm);
+      font-size: 14px;
+      color: var(--zd-color-grey-700);
+    }
+    
+    .date-input:focus {
+      outline: none;
+      border-color: var(--zd-color-blue-600);
+      box-shadow: 0 0 0 3px rgba(31, 115, 183, 0.25);
+    }
+    
+    /* Button row */
+    .modal-actions {
+      display: flex;
+      gap: var(--zd-spacing-md);
+      margin-top: var(--zd-spacing-xl);
+    }
+    
+    .primary-button {
+      flex: 1;
+      padding: var(--zd-spacing-sm) var(--zd-spacing-md);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-white);
+      background-color: var(--zd-color-kale-600);
+      border: none;
+      border-radius: var(--zd-border-radius-sm);
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .primary-button:hover {
+      background-color: var(--zd-color-kale-700);
+    }
+    
+    .primary-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(3, 54, 61, 0.25);
+    }
+    
+    .secondary-button {
+      padding: var(--zd-spacing-sm) var(--zd-spacing-md);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-kale-600);
+      background-color: var(--zd-color-white);
+      border: 1px solid var(--zd-color-kale-600);
+      border-radius: var(--zd-border-radius-sm);
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .secondary-button:hover {
+      background-color: var(--zd-color-kale-100);
+    }
+    
+    .secondary-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(3, 54, 61, 0.25);
+    }
+    
+    /* My Cloned Accounts page */
+    .cloned-accounts-page {
+      display: none;
+    position: relative;
+    top: 100px;
+    }
+    
+    .accounts-list {
+      background-color: var(--zd-color-white);
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .account-item {
+      display: flex;
+      align-items: center;
+      padding: var(--zd-spacing-md) var(--zd-spacing-xl);
+      border-bottom: 1px solid var(--zd-color-grey-200);
+    }
+    
+    .account-item:last-child {
+      border-bottom: none;
+    }
+    
+    .account-icon {
+      margin-right: var(--zd-spacing-md);
+      color: var(--zd-color-kale-600);
+    }
+    
+    .account-details {
+      flex: 1;
+    }
+    
+    .account-name {
+      font-size: 16px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-xs);
+    }
+    
+    .account-url {
+      font-size: 14px;
+      color: var(--zd-color-blue-600);
+    }
+    
+    .account-date {
+      font-size: 12px;
+      color: var(--zd-color-grey-600);
+    }
+    
+    .account-actions {
+      display: flex;
+      gap: var(--zd-spacing-sm);
+    }
+    
+    .account-action-button {
+      background: none;
+      border: none;
+      color: var(--zd-color-grey-600);
+      cursor: pointer;
+      padding: var(--zd-spacing-xs);
+      border-radius: var(--zd-border-radius-sm);
+      transition: background-color 0.2s;
+    }
+    
+    .account-action-button:hover {
+      background-color: var(--zd-color-grey-200);
+      color: var(--zd-color-grey-800);
+    }
+    
+    /* Toast notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--zd-color-kale-600);
+      color: var(--zd-color-white);
+      padding: var(--zd-spacing-md) var(--zd-spacing-xl);
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: var(--zd-spacing-md);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      max-width: 400px;
+    }
+    
+    .toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .toast-icon {
+      color: var(--zd-color-green-400);
+    }
+    
+    .toast-message {
+      flex: 1;
+    }
+    
+    .toast-title {
+      font-weight: var(--zd-font-weight-semibold);
+      margin-bottom: var(--zd-spacing-xs);
+    }
+    
+    .toast-content {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .toast-close {
+      background: none;
+      border: none;
+      color: var(--zd-color-white);
+      opacity: 0.7;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .toast-close:hover {
+      opacity: 1;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .filter-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: var(--zd-spacing-xs);
+      }
+      
+      .search-wrapper {
+        width: 100%;
+      }
+      
+      .template-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+      
+      .date-range {
+        flex-direction: column;
+      }
+      
+      .modal-actions {
+        flex-direction: column;
+      }
+      
+      .account-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .account-icon {
+        margin-bottom: var(--zd-spacing-xs);
+      }
+      
+      .account-actions {
+        margin-top: var(--zd-spacing-sm);
+      }
+    }
+    
+    /* Material Icons sizes */
+    .material-icons {
+      font-size: 24px;
+    }
+    
+    .material-icons.large {
+      font-size: 48px;
+    }
+  
+  .fieldset-with-label {
+    border: 1px solid var(--zd-color-grey-300);
+    border-radius: var(--zd-border-radius-sm);
+    padding: var(--zd-spacing-lg);
+    margin-bottom: var(--zd-spacing-xl);
+  }
+  .fieldset-with-label legend {
+    font-size: 14px;
+    font-weight: var(--zd-font-weight-semibold);
+    color: var(--zd-color-grey-700);
+    padding: 0 var(--zd-spacing-sm);
+  }
+  .demo-services-section summary {
+    font-weight: var(--zd-font-weight-semibold);
+    color: var(--zd-color-kale-600);
+    cursor: pointer;
+    margin-bottom: var(--zd-spacing-sm);
+    font-size: 16px;
+  }
+  .disclaimer {
+    font-size: 13px;
+    color: var(--zd-color-grey-600);
+    margin-bottom: var(--zd-spacing-md);
+  }
+  .sla-disclaimer {
+    font-size: 12px;
+    color: var(--zd-color-red-500);
+    margin-top: var(--zd-spacing-md);
+  }
+  .expandable .details-input {
+    display: none;
+    margin-top: var(--zd-spacing-xs);
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid var(--zd-color-grey-300);
+    border-radius: var(--zd-border-radius-sm);
+    padding: var(--zd-spacing-sm);
+    resize: vertical;
+  }
+  .expandable input:checked ~ .details-input {
+    display: block;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<div class="header-custom">
+<h1>Account Template Marketplace</h1>
+<p>Select a template that best fits your demonstration needs. Each template comes pre-configured with industry-specific data, workflows, and features.</p>
+<!-- Top navigation -->
+<div class="top-nav">
+<button class="nav-tab active" id="templates-tab">Browse Templates</button>
+<button class="nav-tab" id="accounts-tab">My Cloned Accounts</button>
+</div>
+</div>
+<!-- Templates Page -->
+<div class="templates-page" id="templates-page">
+<!-- Controls -->
+<div class="controls">
+<div class="filter-tabs">
+<button class="filter-tab active" data-category="all">All Templates</button>
+<button class="filter-tab" data-category="retail">Retail</button>
+<button class="filter-tab" data-category="tech">Technology</button>
+<button class="filter-tab" data-category="travel">Travel &amp; Hospitality</button>
+<button class="filter-tab" data-category="finance">Financial Services</button>
+<button class="filter-tab" data-category="healthcare">Healthcare</button>
+</div>
+<div class="search-wrapper">
+<span class="search-icon">
+<span class="material-icons" style="font-size: 18px;">search</span>
+</span>
+<input class="search-input" id="search-input" placeholder="Search templates..." type="text"/>
+</div>
+</div>
+<!-- Template Grid -->
+<div class="template-grid" id="template-grid">
+<!-- Retail - Clothing Template -->
+<div class="template-card" data-category="retail" data-id="1" tabindex="0">
+<div class="template-preview bg-retail">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">shopping_bag</span>
+</div>
+</div>
+<div class="template-badge badge-popular">Popular</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Retail - Clothing</h3>
+<p class="template-subtitle">Apparel retail demo with inventory, customer profiles, and order management</p>
+<div class="template-features">
+<span class="feature-tag">Inventory</span>
+<span class="feature-tag">POS</span>
+<span class="feature-tag">Loyalty</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Retail - Devices/Hardware Template -->
+<div class="template-card" data-category="retail" data-id="2" tabindex="0">
+<div class="template-preview bg-retail">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">devices</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Retail - Devices/Hardware</h3>
+<p class="template-subtitle">Electronics retail demo with product catalog, warranties, and support cases</p>
+<div class="template-features">
+<span class="feature-tag">Warranties</span>
+<span class="feature-tag">Returns</span>
+<span class="feature-tag">Support</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- SaaS/Tech Software Template -->
+<div class="template-card" data-category="tech" data-id="3" tabindex="0">
+<div class="template-preview bg-tech">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">cloud</span>
+</div>
+</div>
+<div class="template-badge badge-new">New</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">SaaS/Tech Software</h3>
+<p class="template-subtitle">Software company demo with customer accounts, subscription billing, and usage analytics</p>
+<div class="template-features">
+<span class="feature-tag">Subscriptions</span>
+<span class="feature-tag">Analytics</span>
+<span class="feature-tag">User Roles</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Gaming Template -->
+<div class="template-card" data-category="tech" data-id="4" tabindex="0">
+<div class="template-preview bg-tech">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">sports_esports</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Gaming</h3>
+<p class="template-subtitle">Game developer demo with player accounts, in-game purchases, and community management</p>
+<div class="template-features">
+<span class="feature-tag">Player Data</span>
+<span class="feature-tag">Purchases</span>
+<span class="feature-tag">Support</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Hospitality Template -->
+<div class="template-card" data-category="travel" data-id="5" tabindex="0">
+<div class="template-preview bg-travel">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">hotel</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Hospitality</h3>
+<p class="template-subtitle">Hotel chain demo with bookings, guest profiles, and loyalty program</p>
+<div class="template-features">
+<span class="feature-tag">Reservations</span>
+<span class="feature-tag">Guest Services</span>
+<span class="feature-tag">Loyalty</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Travel Template -->
+<div class="template-card" data-category="travel" data-id="6" tabindex="0">
+<div class="template-preview bg-travel">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">flight</span>
+</div>
+</div>
+<div class="template-badge badge-popular">Popular</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Travel</h3>
+<p class="template-subtitle">Travel agency demo with bookings, customer itineraries, and travel packages</p>
+<div class="template-features">
+<span class="feature-tag">Bookings</span>
+<span class="feature-tag">Itineraries</span>
+<span class="feature-tag">Reviews</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Ride Share Template -->
+<div class="template-card" data-category="travel" data-id="7" tabindex="0">
+<div class="template-preview bg-travel">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">local_taxi</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Ride Share</h3>
+<p class="template-subtitle">Transportation platform demo with rider accounts, driver profiles, and trip history</p>
+<div class="template-features">
+<span class="feature-tag">Trips</span>
+<span class="feature-tag">Payments</span>
+<span class="feature-tag">Ratings</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Banking Template -->
+<div class="template-card" data-category="finance" data-id="8" tabindex="0">
+<div class="template-preview bg-finance">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">account_balance</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Banking</h3>
+<p class="template-subtitle">Financial institution demo with accounts, transactions, and financial products</p>
+<div class="template-features">
+<span class="feature-tag">Accounts</span>
+<span class="feature-tag">Transactions</span>
+<span class="feature-tag">Products</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Empty State (hidden by default) -->
+<div class="empty-state" id="empty-state">
+<h2>No templates found</h2>
+<p>Try adjusting your search or filters to find a template that matches your requirements.</p>
+</div>
+</div>
+</div>
+<!-- My Cloned Accounts Page -->
+<div class="cloned-accounts-page" id="cloned-accounts-page">
+<div class="accounts-list">
+<div class="account-item">
+<div class="account-icon">
+<span class="material-icons">shopping_bag</span>
+</div>
+<div class="account-details">
+<div class="account-name">Retail Clothing Demo</div>
+<div class="account-url">z3n-retail_clothing.zendesk.com</div>
+<div class="account-date">Created: Apr 1, 2025</div>
+</div>
+<div class="account-actions">
+<button class="account-action-button" title="Open account">
+<span class="material-icons">open_in_new</span>
+</button>
+<button class="account-action-button" title="Clone account">
+<span class="material-icons">content_copy</span>
+</button>
+<button class="account-action-button" title="Delete account">
+<span class="material-icons">delete</span>
+</button>
+</div>
+</div>
+<div class="account-item">
+<div class="account-icon">
+<span class="material-icons">cloud</span>
+</div>
+<div class="account-details">
+<div class="account-name">SaaS Software Demo</div>
+<div class="account-url">z3n-saas_software.zendesk.com</div>
+<div class="account-date">Created: Mar 28, 2025</div>
+</div>
+<div class="account-actions">
+<button class="account-action-button" title="Open account">
+<span class="material-icons">open_in_new</span>
+</button>
+<button class="account-action-button" title="Clone account">
+<span class="material-icons">content_copy</span>
+</button>
+<button class="account-action-button" title="Delete account">
+<span class="material-icons">delete</span>
+</button>
+</div>
+</div>
+<div class="account-item">
+<div class="account-icon">
+<span class="material-icons">flight</span>
+</div>
+<div class="account-details">
+<div class="account-name">Travel Agency Demo</div>
+<div class="account-url">z3n-travel_agency.zendesk.com</div>
+<div class="account-date">Created: Mar 15, 2025</div>
+</div>
+<div class="account-actions">
+<button class="account-action-button" title="Open account">
+<span class="material-icons">open_in_new</span>
+</button>
+<button class="account-action-button" title="Clone account">
+<span class="material-icons">content_copy</span>
+</button>
+<button class="account-action-button" title="Delete account">
+<span class="material-icons">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Template Preview Modal -->
+<div class="modal-overlay" id="template-modal">
+<div class="modal-container">
+<div class="modal-header">
+<h2 class="modal-title" id="modal-title">Template Title</h2>
+<button class="close-modal" id="close-modal">×</button>
+</div>
+<div class="modal-preview">
+<img alt="Template Demo" id="modal-demo" src="https://z3n-aiagent-hybrid.zendesk.com/hc/theming_assets/01JQVA86GVXPSJ9Y8PB0VJSKKY"/>
+</div>
+<div class="modal-content">
+<div class="self-service-section">
+<fieldset class="fieldset-with-label">
+<legend>Self Service Options</legend>
+<div class="configuration-section">
+<h3 class="section-title">Special Configurations</h3>
+<div class="checkbox-group">
+<!-- Existing checkboxes -->
+<label class="checkbox-container">
+            Enable Ticket Scheduler
+            <input name="enable_scheduler" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+            Install OneView App
+            <input name="install_oneview" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+            Import historical data
+            <input id="import-data-checkbox" name="import_data" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+</div>
+<div id="date-range-container" style="display: none; margin-left: 28px; margin-bottom: 16px;">
+<div class="date-range">
+<input class="date-input" placeholder="Start date" type="date"/>
+<input class="date-input" placeholder="End date" type="date"/>
+</div>
+</div>
+</div>
+<div class="configuration-section">
+<h3 class="section-title">Enable EAP Features</h3>
+<div class="checkbox-group">
+<label class="checkbox-container">
+            AI Powered App Builder
+            <input name="ai_app_builder" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+            Knowledge Graph
+            <input name="knowledge_graph" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+            Smart Reports
+            <input name="smart_reports" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+            Action Builder
+            <input name="action_builder" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+            Agentic Bots
+            <input name="agentic_bots" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+</div>
+</div>
+</fieldset>
+</div>
+
+<div class="demo-services-section">
+<details open="">
+<summary>Demo Engineering Services</summary>
+<p class="disclaimer">These options are for special requests and require a ticket to the Demo Engineering team. SLA commitments may vary.</p>
+<div class="checkbox-group">
+<label class="checkbox-container expandable">
+          Custom Explore Reports
+          <input name="custom_explore_reports" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          AI Agent - Advanced (Initial Config, Bot Cloning, Bot Customization)
+          <input name="ai_agent_advanced" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          Auto Assist Procedures
+          <input name="auto_assist_procedures" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          External Action(s)
+          <input name="external_actions" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          Action Flow (plus connections)
+          <input name="action_flow" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          Custom Help Center Theme
+          <input name="custom_theme" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          Custom App (Sidebar : 360 design, Other)
+          <input name="custom_app" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          Explore Browser Extension
+          <input name="explore_extension" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+          Other / Special Request
+          <input name="special_request" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+</div>
+<p class="sla-disclaimer">Note: this service requires X days lead time</p>
+</details>
+</div>
+<div class="demo-services-section">
+<button class="secondary-button" id="toggle-demo-services" style="margin-bottom: 16px;">
+    Toggle Demo Engineering Services
+  </button>
+<div id="demo-services-content" style="display: none;">
+<p class="disclaimer">These options are for special requests and require a ticket to the Demo Engineering team. SLA commitments may vary.</p>
+<div class="checkbox-group">
+<label class="checkbox-container expandable">
+        Custom Explore Reports
+        <input name="custom_explore_reports" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        AI Agent - Advanced (Initial Config, Bot Cloning, Bot Customization)
+        <input name="ai_agent_advanced" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        Auto Assist Procedures
+        <input name="auto_assist_procedures" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        External Action(s)
+        <input name="external_actions" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        Action Flow (plus connections)
+        <input name="action_flow" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        Custom Help Center Theme
+        <input name="custom_theme" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        Custom App (Sidebar : 360 design, Other)
+        <input name="custom_app" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        Explore Browser Extension
+        <input name="explore_extension" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+<label class="checkbox-container expandable">
+        Other / Special Request
+        <input name="special_request" type="checkbox"/>
+<span class="checkmark"></span>
+<textarea class="details-input" placeholder="Please provide details"></textarea>
+</label>
+</div>
+<p class="sla-disclaimer">Note: this service requires X days lead time</p>
+</div>
+</div>
+</div>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Template Marketplace</title>
+<!-- Material Icons Font -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+    :root {
+      /* Garden color variables */
+      --zd-color-white: #FFFFFF;
+      --zd-color-grey-100: #F8F9F9;
+      --zd-color-grey-200: #E9EBED;
+      --zd-color-grey-300: #D8DCDE;
+      --zd-color-grey-400: #C2C8CC;
+      --zd-color-grey-500: #87929D;
+      --zd-color-grey-600: #68737D;
+      --zd-color-grey-700: #49545C;
+      --zd-color-grey-800: #2F3941;
+      --zd-color-blue-100: #EDF7FF;
+      --zd-color-blue-200: #CEE2F2;
+      --zd-color-blue-300: #9CC7F3;
+      --zd-color-blue-400: #5293C7;
+      --zd-color-blue-500: #337AB7;
+      --zd-color-blue-600: #1F73B7;
+      --zd-color-blue-700: #144A75;
+      --zd-color-blue-800: #0F3554;
+      --zd-color-kale-100: #EEF8F8;
+      --zd-color-kale-200: #D5EEEE;
+      --zd-color-kale-300: #ABC9C9;
+      --zd-color-kale-400: #82A3A3;
+      --zd-color-kale-500: #5B8A8A;
+      --zd-color-kale-600: #03363D;
+      --zd-color-kale-700: #022B30;
+      --zd-color-kale-800: #012024;
+      --zd-color-red-100: #FFF0F1;
+      --zd-color-red-200: #F5D5D8;
+      --zd-color-red-300: #F5B5BA;
+      --zd-color-red-400: #E35B66;
+      --zd-color-red-500: #D93F4C;
+      --zd-color-red-600: #CC3340;
+      --zd-color-red-700: #8C232C;
+      --zd-color-red-800: #681219;
+      --zd-color-green-100: #EDF8F4;
+      --zd-color-green-200: #D1E8DF;
+      --zd-color-green-300: #AECFC2;
+      --zd-color-green-400: #5EAA91;
+      --zd-color-green-500: #228F67;
+      --zd-color-green-600: #038153;
+      --zd-color-green-700: #186146;
+      --zd-color-green-800: #0B3B29;
+      --zd-color-yellow-100: #FFF7ED;
+      --zd-color-yellow-200: #FFEEDB;
+      --zd-color-yellow-300: #FED6A8;
+      --zd-color-yellow-400: #FFBA43;
+      --zd-color-yellow-500: #F5A623;
+      --zd-color-yellow-600: #E37B0E;
+      --zd-color-yellow-700: #974E0C;
+      --zd-color-yellow-800: #6D3A06;
+      
+      /* Garden typography variables */
+      --zd-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      --zd-font-weight-regular: 400;
+      --zd-font-weight-medium: 500;
+      --zd-font-weight-semibold: 600;
+      --zd-font-weight-bold: 700;
+      
+      /* Garden spacing variables */
+      --zd-spacing-xs: 4px;
+      --zd-spacing-sm: 8px;
+      --zd-spacing-md: 16px;
+      --zd-spacing-lg: 24px;
+      --zd-spacing-xl: 32px;
+      --zd-spacing-xxl: 40px;
+      
+      /* Garden border variables */
+      --zd-border-radius-sm: 4px;
+      --zd-border-radius-md: 6px;
+    }
+    
+    .header {
+      display: none !important;
+    }
+    
+    body {
+      font-family: var(--zd-font-family);
+      margin: 0;
+      padding: 0;
+      color: var(--zd-color-grey-800);
+      background-color: var(--zd-color-grey-100);
+      line-height: 1.5;
+    }
+    
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: var(--zd-spacing-xl);
+    }
+    
+    /* Header styles */
+    .header-custom {
+      margin-bottom: var(--zd-spacing-xl);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .header-custom h1 {
+      font-size: 28px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-sm);
+    }
+    
+    .header-custom p {
+      font-size: 16px;
+      color: var(--zd-color-grey-600);
+      max-width: 700px;
+      margin: 0 auto var(--zd-spacing-xl);
+      text-align: center;
+    }
+    
+    /* Top navigation */
+    .top-nav {
+      display: flex;
+      border-bottom: 1px solid var(--zd-color-grey-300);
+      margin-bottom: var(--zd-spacing-xl);
+      width: 100%;
+    }
+    
+    .nav-tab {
+      padding: var(--zd-spacing-md) var(--zd-spacing-xl);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-grey-700);
+      cursor: pointer;
+      position: relative;
+      background: none;
+      border: none;
+    }
+    
+    .nav-tab:hover {
+      color: var(--zd-color-grey-800);
+    }
+    
+    .nav-tab.active {
+      color: var(--zd-color-kale-600);
+      font-weight: var(--zd-font-weight-semibold);
+    }
+    
+    .nav-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--zd-color-kale-600);
+    }
+    
+    /* Controls styles */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: var(--zd-spacing-xl);
+    }
+    
+    /* Garden-styled tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--zd-spacing-xs);
+      margin-bottom: var(--zd-spacing-lg);
+      border-bottom: 1px solid var(--zd-color-grey-300);
+      width: 100%;
+      justify-content: center;
+    }
+    
+    .filter-tab {
+      padding: var(--zd-spacing-sm) var(--zd-spacing-lg);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-grey-700);
+      cursor: pointer;
+      position: relative;
+      background: none;
+      border: none;
+    }
+    
+    .filter-tab:hover {
+      color: var(--zd-color-grey-800);
+    }
+    
+    .filter-tab.active {
+      color: var(--zd-color-kale-600);
+      font-weight: var(--zd-font-weight-semibold);
+    }
+    
+    .filter-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--zd-color-kale-600);
+    }
+    
+    /* Garden-styled search */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--zd-spacing-xl);
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  margin-bottom: 0;
+}
+
+.search-wrapper {
+  position: relative;
+  max-width: 400px;
+  flex: 1;
+  margin-left: auto;
+}
+
+    
+    .search-input {
+      width: 100%;
+      padding: var(--zd-spacing-sm) var(--zd-spacing-sm) var(--zd-spacing-sm) var(--zd-spacing-xl);
+      font-size: 14px;
+      border: 1px solid var(--zd-color-grey-400);
+      border-radius: var(--zd-border-radius-sm);
+      background-color: var(--zd-color-white);
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: var(--zd-color-blue-600);
+      box-shadow: 0 0 0 3px rgba(31, 115, 183, 0.25);
+    }
+    
+    .search-icon {
+      position: absolute;
+      left: var(--zd-spacing-sm);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--zd-color-grey-500);
+    }
+    
+    /* Template grid styles */
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--zd-spacing-lg);
+    }
+    
+    /* Garden-styled cards */
+    .template-card {
+      background-color: var(--zd-color-white);
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .template-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .template-card:focus-within {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(31, 115, 183, 0.25);
+      outline: none;
+    }
+    
+    .template-preview {
+      height: 140px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Template icons */
+    .icon-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+    
+    .template-card:hover .icon-circle {
+      transform: scale(1.1);
+    }
+    
+    /* Background colors matching Zendesk Garden palette */
+    .bg-retail {
+      background-color: var(--zd-color-blue-100);
+    }
+    
+    .bg-retail .icon-circle {
+      background-color: var(--zd-color-blue-200);
+    }
+    
+    .bg-retail .material-icons {
+      color: var(--zd-color-blue-700);
+    }
+    
+    .bg-tech {
+      background-color: var(--zd-color-kale-100);
+    }
+    
+    .bg-tech .icon-circle {
+      background-color: var(--zd-color-kale-200);
+    }
+    
+    .bg-tech .material-icons {
+      color: var(--zd-color-kale-600);
+    }
+    
+    .bg-travel {
+      background-color: var(--zd-color-green-100);
+    }
+    
+    .bg-travel .icon-circle {
+      background-color: var(--zd-color-green-200);
+    }
+    
+    .bg-travel .material-icons {
+      color: var(--zd-color-green-600);
+    }
+    
+    .bg-finance {
+      background-color: var(--zd-color-yellow-100);
+    }
+    
+    .bg-finance .icon-circle {
+      background-color: var(--zd-color-yellow-200);
+    }
+    
+    .bg-finance .material-icons {
+      color: var(--zd-color-yellow-700);
+    }
+    
+    .bg-healthcare {
+      background-color: var(--zd-color-red-100);
+    }
+    
+    .bg-healthcare .icon-circle {
+      background-color: var(--zd-color-red-200);
+    }
+    
+    .bg-healthcare .material-icons {
+      color: var(--zd-color-red-700);
+    }
+    
+    /* Badge */
+    .template-badge {
+      position: absolute;
+      top: var(--zd-spacing-sm);
+      right: var(--zd-spacing-sm);
+      font-size: 12px;
+      font-weight: var(--zd-font-weight-semibold);
+      padding: 2px var(--zd-spacing-sm);
+      border-radius: 100px;
+      z-index: 1;
+    }
+    
+    .badge-popular {
+      background-color: var(--zd-color-green-600);
+      color: var(--zd-color-white);
+    }
+    
+    .badge-new {
+      background-color: var(--zd-color-blue-600);
+      color: var(--zd-color-white);
+    }
+    
+    .template-info {
+      padding: var(--zd-spacing-lg);
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .template-title {
+      font-size: 16px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-xs);
+    }
+    
+    .template-subtitle {
+      font-size: 14px;
+      color: var(--zd-color-grey-600);
+      margin-bottom: var(--zd-spacing-md);
+      flex-grow: 1;
+    }
+    
+    /* Garden-styled tags */
+    .template-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--zd-spacing-xs);
+      margin-bottom: var(--zd-spacing-md);
+    }
+    
+    .feature-tag {
+      font-size: 12px;
+      padding: 2px var(--zd-spacing-sm);
+      background-color: var(--zd-color-grey-200);
+      border-radius: 100px;
+      color: var(--zd-color-grey-700);
+      font-weight: var(--zd-font-weight-medium);
+    }
+    
+    /* Garden-styled button */
+    .template-button {
+      width: 100%;
+      padding: var(--zd-spacing-sm) var(--zd-spacing-md);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-white);
+      background-color: var(--zd-color-kale-600);
+      border: none;
+      border-radius: var(--zd-border-radius-sm);
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .template-button:hover {
+      background-color: var(--zd-color-kale-700);
+    }
+    
+    .template-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(3, 54, 61, 0.25);
+    }
+    
+    /* Empty state styles */
+    .empty-state {
+      text-align: center;
+      background-color: var(--zd-color-white);
+      border-radius: var(--zd-border-radius-sm);
+      padding: var(--zd-spacing-xxl);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      display: none;
+    }
+    
+    .empty-state h2 {
+      font-size: 18px;
+      font-weight: var(--zd-font-weight-semibold);
+      margin-bottom: var(--zd-spacing-sm);
+      color: var(--zd-color-grey-800);
+    }
+    
+    .empty-state p {
+      font-size: 14px;
+      color: var(--zd-color-grey-600);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    /* Modal styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: none;
+      overflow-y: auto;
+      padding: var(--zd-spacing-xl);
+    }
+    
+    .modal-container {
+      background-color: var(--zd-color-white);
+      max-width: 800px;
+      margin: var(--zd-spacing-xl) auto;
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+      overflow: hidden;
+    }
+    
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--zd-spacing-lg) var(--zd-spacing-xl);
+      border-bottom: 1px solid var(--zd-color-grey-300);
+    }
+    
+    .modal-title {
+      font-size: 18px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+    }
+    
+    .close-modal {
+      background: none;
+      border: none;
+      color: var(--zd-color-grey-600);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+    
+    .close-modal:hover {
+      color: var(--zd-color-grey-800);
+    }
+    
+    .modal-preview {
+      height: 300px;
+      overflow: hidden;
+      background-color: var(--zd-color-grey-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-preview img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .modal-content {
+      padding: var(--zd-spacing-xl);
+    }
+    
+    .template-description {
+      font-size: 14px;
+      color: var(--zd-color-grey-700);
+      margin-bottom: var(--zd-spacing-xl);
+      line-height: 1.6;
+    }
+    
+    /* Configuration section */
+    .configuration-section {
+      margin-bottom: var(--zd-spacing-xl);
+    }
+    
+    .section-title {
+      font-size: 16px;
+      font-weight: var(--zd-font-weight-semibold);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-md);
+      padding-bottom: var(--zd-spacing-xs);
+      border-bottom: 1px solid var(--zd-color-grey-300);
+    }
+    
+    /* Checkbox styles */
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: var(--zd-spacing-md) var(--zd-spacing-xl);
+      margin-bottom: var(--zd-spacing-lg);
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .checkbox-container {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--zd-color-grey-700);
+      margin-bottom: var(--zd-spacing-sm);
+    }
+    
+    .checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      background-color: var(--zd-color-white);
+      border: 1px solid var(--zd-color-grey-400);
+      border-radius: 3px;
+    }
+    
+    .checkbox-container:hover input ~ .checkmark {
+      border-color: var(--zd-color-grey-600);
+    }
+    
+    .checkbox-container input:checked ~ .checkmark {
+      background-color: var(--zd-color-kale-600);
+      border-color: var(--zd-color-kale-600);
+    }
+    
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+    
+    .checkbox-container input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    .checkbox-container .checkmark:after {
+      left: 6px;
+      top: 2px;
+      width: 3px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    
+    /* Date picker */
+    .date-range {
+      display: flex;
+      gap: var(--zd-spacing-md);
+      margin-top: var(--zd-spacing-xs);
+    }
+    
+    .date-input {
+      padding: var(--zd-spacing-xs) var(--zd-spacing-sm);
+      border: 1px solid var(--zd-color-grey-400);
+      border-radius: var(--zd-border-radius-sm);
+      font-size: 14px;
+      color: var(--zd-color-grey-700);
+    }
+    
+    .date-input:focus {
+      outline: none;
+      border-color: var(--zd-color-blue-600);
+      box-shadow: 0 0 0 3px rgba(31, 115, 183, 0.25);
+    }
+    
+    /* Button row */
+    .modal-actions {
+      display: flex;
+      gap: var(--zd-spacing-md);
+      margin-top: var(--zd-spacing-xl);
+    }
+    
+    .primary-button {
+      flex: 1;
+      padding: var(--zd-spacing-sm) var(--zd-spacing-md);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-white);
+      background-color: var(--zd-color-kale-600);
+      border: none;
+      border-radius: var(--zd-border-radius-sm);
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .primary-button:hover {
+      background-color: var(--zd-color-kale-700);
+    }
+    
+    .primary-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(3, 54, 61, 0.25);
+    }
+    
+    .secondary-button {
+      padding: var(--zd-spacing-sm) var(--zd-spacing-md);
+      font-size: 14px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-kale-600);
+      background-color: var(--zd-color-white);
+      border: 1px solid var(--zd-color-kale-600);
+      border-radius: var(--zd-border-radius-sm);
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .secondary-button:hover {
+      background-color: var(--zd-color-kale-100);
+    }
+    
+    .secondary-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(3, 54, 61, 0.25);
+    }
+    
+    /* My Cloned Accounts page */
+    .cloned-accounts-page {
+      display: none;
+    position: relative;
+    top: 100px;
+    }
+    
+    .accounts-list {
+      background-color: var(--zd-color-white);
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    
+    .account-item {
+      display: flex;
+      align-items: center;
+      padding: var(--zd-spacing-md) var(--zd-spacing-xl);
+      border-bottom: 1px solid var(--zd-color-grey-200);
+    }
+    
+    .account-item:last-child {
+      border-bottom: none;
+    }
+    
+    .account-icon {
+      margin-right: var(--zd-spacing-md);
+      color: var(--zd-color-kale-600);
+    }
+    
+    .account-details {
+      flex: 1;
+    }
+    
+    .account-name {
+      font-size: 16px;
+      font-weight: var(--zd-font-weight-medium);
+      color: var(--zd-color-grey-800);
+      margin-bottom: var(--zd-spacing-xs);
+    }
+    
+    .account-url {
+      font-size: 14px;
+      color: var(--zd-color-blue-600);
+    }
+    
+    .account-date {
+      font-size: 12px;
+      color: var(--zd-color-grey-600);
+    }
+    
+    .account-actions {
+      display: flex;
+      gap: var(--zd-spacing-sm);
+    }
+    
+    .account-action-button {
+      background: none;
+      border: none;
+      color: var(--zd-color-grey-600);
+      cursor: pointer;
+      padding: var(--zd-spacing-xs);
+      border-radius: var(--zd-border-radius-sm);
+      transition: background-color 0.2s;
+    }
+    
+    .account-action-button:hover {
+      background-color: var(--zd-color-grey-200);
+      color: var(--zd-color-grey-800);
+    }
+    
+    /* Toast notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--zd-color-kale-600);
+      color: var(--zd-color-white);
+      padding: var(--zd-spacing-md) var(--zd-spacing-xl);
+      border-radius: var(--zd-border-radius-sm);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: var(--zd-spacing-md);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      max-width: 400px;
+    }
+    
+    .toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    .toast-icon {
+      color: var(--zd-color-green-400);
+    }
+    
+    .toast-message {
+      flex: 1;
+    }
+    
+    .toast-title {
+      font-weight: var(--zd-font-weight-semibold);
+      margin-bottom: var(--zd-spacing-xs);
+    }
+    
+    .toast-content {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    
+    .toast-close {
+      background: none;
+      border: none;
+      color: var(--zd-color-white);
+      opacity: 0.7;
+      cursor: pointer;
+      padding: 0;
+    }
+    
+    .toast-close:hover {
+      opacity: 1;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .filter-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: var(--zd-spacing-xs);
+      }
+      
+      .search-wrapper {
+        width: 100%;
+      }
+      
+      .template-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+      
+      .date-range {
+        flex-direction: column;
+      }
+      
+      .modal-actions {
+        flex-direction: column;
+      }
+      
+      .account-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .account-icon {
+        margin-bottom: var(--zd-spacing-xs);
+      }
+      
+      .account-actions {
+        margin-top: var(--zd-spacing-sm);
+      }
+    }
+    
+    /* Material Icons sizes */
+    .material-icons {
+      font-size: 24px;
+    }
+    
+    .material-icons.large {
+      font-size: 48px;
+    }
+  
+  .fieldset-with-label {
+    border: 1px solid var(--zd-color-grey-300);
+    border-radius: var(--zd-border-radius-sm);
+    padding: var(--zd-spacing-lg);
+    margin-bottom: var(--zd-spacing-xl);
+  }
+  .fieldset-with-label legend {
+    font-size: 14px;
+    font-weight: var(--zd-font-weight-semibold);
+    color: var(--zd-color-grey-700);
+    padding: 0 var(--zd-spacing-sm);
+  }
+.demo-services-section summary {
+  font-weight: var(--zd-font-weight-semibold);
+  color: var(--zd-color-kale-600);
+  cursor: pointer;
+  margin-bottom: var(--zd-spacing-sm);
+  font-size: 16px;
+  padding: var(--zd-spacing-sm) 0;
+}
+  .disclaimer {
+    font-size: 13px;
+    color: var(--zd-color-grey-600);
+    margin-bottom: var(--zd-spacing-md);
+  }
+  .sla-disclaimer {
+    font-size: 12px;
+    color: var(--zd-color-red-500);
+    margin-top: var(--zd-spacing-md);
+  }
+  .expandable .details-input {
+    display: none;
+    margin-top: var(--zd-spacing-xs);
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid var(--zd-color-grey-300);
+    border-radius: var(--zd-border-radius-sm);
+    padding: var(--zd-spacing-sm);
+    resize: vertical;
+  }
+  .expandable input:checked ~ .details-input {
+    display: block;
+  }
+.demo-services-section {
+  margin-top: var(--zd-spacing-xl);
+  padding: var(--zd-spacing-lg);
+  background-color: var(--zd-color-grey-100);
+  border: 1px dashed var(--zd-color-grey-400);
+  border-radius: var(--zd-border-radius-sm);
+}
+
+    
+    
+</style>
+<body>
+<div class="container">
+<!-- Header -->
+<div class="header-custom">
+<h1>Account Template Marketplace</h1>
+<p>Select a template that best fits your demonstration needs. Each template comes pre-configured with industry-specific data, workflows, and features.</p>
+<!-- Top navigation -->
+<div class="top-nav">
+<button class="nav-tab active" id="templates-tab">Browse Templates</button>
+<button class="nav-tab" id="accounts-tab">My Cloned Accounts</button>
+</div>
+</div>
+<!-- Templates Page -->
+<div class="templates-page" id="templates-page">
+<!-- Controls -->
+<div class="controls">
+<div class="filter-tabs">
+<button class="filter-tab active" data-category="all">All Templates</button>
+<button class="filter-tab" data-category="retail">Retail</button>
+<button class="filter-tab" data-category="tech">Technology</button>
+<button class="filter-tab" data-category="travel">Travel &amp; Hospitality</button>
+<button class="filter-tab" data-category="finance">Financial Services</button>
+<button class="filter-tab" data-category="healthcare">Healthcare</button>
+</div>
+<div class="search-wrapper">
+<span class="search-icon">
+<span class="material-icons" style="font-size: 18px;">search</span>
+</span>
+<input class="search-input" id="search-input" placeholder="Search templates..." type="text"/>
+</div>
+</div>
+<!-- Template Grid -->
+<div class="template-grid" id="template-grid">
+<!-- Retail - Clothing Template -->
+<div class="template-card" data-category="retail" data-id="1" tabindex="0">
+<div class="template-preview bg-retail">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">shopping_bag</span>
+</div>
+</div>
+<div class="template-badge badge-popular">Popular</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Retail - Clothing</h3>
+<p class="template-subtitle">Apparel retail demo with inventory, customer profiles, and order management</p>
+<div class="template-features">
+<span class="feature-tag">Inventory</span>
+<span class="feature-tag">POS</span>
+<span class="feature-tag">Loyalty</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Retail - Devices/Hardware Template -->
+<div class="template-card" data-category="retail" data-id="2" tabindex="0">
+<div class="template-preview bg-retail">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">devices</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Retail - Devices/Hardware</h3>
+<p class="template-subtitle">Electronics retail demo with product catalog, warranties, and support cases</p>
+<div class="template-features">
+<span class="feature-tag">Warranties</span>
+<span class="feature-tag">Returns</span>
+<span class="feature-tag">Support</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- SaaS/Tech Software Template -->
+<div class="template-card" data-category="tech" data-id="3" tabindex="0">
+<div class="template-preview bg-tech">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">cloud</span>
+</div>
+</div>
+<div class="template-badge badge-new">New</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">SaaS/Tech Software</h3>
+<p class="template-subtitle">Software company demo with customer accounts, subscription billing, and usage analytics</p>
+<div class="template-features">
+<span class="feature-tag">Subscriptions</span>
+<span class="feature-tag">Analytics</span>
+<span class="feature-tag">User Roles</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Gaming Template -->
+<div class="template-card" data-category="tech" data-id="4" tabindex="0">
+<div class="template-preview bg-tech">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">sports_esports</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Gaming</h3>
+<p class="template-subtitle">Game developer demo with player accounts, in-game purchases, and community management</p>
+<div class="template-features">
+<span class="feature-tag">Player Data</span>
+<span class="feature-tag">Purchases</span>
+<span class="feature-tag">Support</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Hospitality Template -->
+<div class="template-card" data-category="travel" data-id="5" tabindex="0">
+<div class="template-preview bg-travel">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">hotel</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Hospitality</h3>
+<p class="template-subtitle">Hotel chain demo with bookings, guest profiles, and loyalty program</p>
+<div class="template-features">
+<span class="feature-tag">Reservations</span>
+<span class="feature-tag">Guest Services</span>
+<span class="feature-tag">Loyalty</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Travel Template -->
+<div class="template-card" data-category="travel" data-id="6" tabindex="0">
+<div class="template-preview bg-travel">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">flight</span>
+</div>
+</div>
+<div class="template-badge badge-popular">Popular</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Travel</h3>
+<p class="template-subtitle">Travel agency demo with bookings, customer itineraries, and travel packages</p>
+<div class="template-features">
+<span class="feature-tag">Bookings</span>
+<span class="feature-tag">Itineraries</span>
+<span class="feature-tag">Reviews</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Ride Share Template -->
+<div class="template-card" data-category="travel" data-id="7" tabindex="0">
+<div class="template-preview bg-travel">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">local_taxi</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Ride Share</h3>
+<p class="template-subtitle">Transportation platform demo with rider accounts, driver profiles, and trip history</p>
+<div class="template-features">
+<span class="feature-tag">Trips</span>
+<span class="feature-tag">Payments</span>
+<span class="feature-tag">Ratings</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Banking Template -->
+<div class="template-card" data-category="finance" data-id="8" tabindex="0">
+<div class="template-preview bg-finance">
+<div class="icon-container">
+<div class="icon-circle">
+<span class="material-icons large">account_balance</span>
+</div>
+</div>
+</div>
+<div class="template-info">
+<h3 class="template-title">Banking</h3>
+<p class="template-subtitle">Financial institution demo with accounts, transactions, and financial products</p>
+<div class="template-features">
+<span class="feature-tag">Accounts</span>
+<span class="feature-tag">Transactions</span>
+<span class="feature-tag">Products</span>
+</div>
+<button class="template-button">Select Template</button>
+</div>
+</div>
+<!-- Empty State (hidden by default) -->
+<div class="empty-state" id="empty-state">
+<h2>No templates found</h2>
+<p>Try adjusting your search or filters to find a template that matches your requirements.</p>
+</div>
+</div>
+</div>
+<!-- My Cloned Accounts Page -->
+<div class="cloned-accounts-page" id="cloned-accounts-page">
+<div class="accounts-list">
+<div class="account-item">
+<div class="account-icon">
+<span class="material-icons">shopping_bag</span>
+</div>
+<div class="account-details">
+<div class="account-name">Retail Clothing Demo</div>
+<div class="account-url">z3n-retail_clothing.zendesk.com</div>
+<div class="account-date">Created: Apr 1, 2025</div>
+</div>
+<div class="account-actions">
+<button class="account-action-button" title="Open account">
+<span class="material-icons">open_in_new</span>
+</button>
+<button class="account-action-button" title="Clone account">
+<span class="material-icons">content_copy</span>
+</button>
+<button class="account-action-button" title="Delete account">
+<span class="material-icons">delete</span>
+</button>
+</div>
+</div>
+<div class="account-item">
+<div class="account-icon">
+<span class="material-icons">cloud</span>
+</div>
+<div class="account-details">
+<div class="account-name">SaaS Software Demo</div>
+<div class="account-url">z3n-saas_software.zendesk.com</div>
+<div class="account-date">Created: Mar 28, 2025</div>
+</div>
+<div class="account-actions">
+<button class="account-action-button" title="Open account">
+<span class="material-icons">open_in_new</span>
+</button>
+<button class="account-action-button" title="Clone account">
+<span class="material-icons">content_copy</span>
+</button>
+<button class="account-action-button" title="Delete account">
+<span class="material-icons">delete</span>
+</button>
+</div>
+</div>
+<div class="account-item">
+<div class="account-icon">
+<span class="material-icons">flight</span>
+</div>
+<div class="account-details">
+<div class="account-name">Travel Agency Demo</div>
+<div class="account-url">z3n-travel_agency.zendesk.com</div>
+<div class="account-date">Created: Mar 15, 2025</div>
+</div>
+<div class="account-actions">
+<button class="account-action-button" title="Open account">
+<span class="material-icons">open_in_new</span>
+</button>
+<button class="account-action-button" title="Clone account">
+<span class="material-icons">content_copy</span>
+</button>
+<button class="account-action-button" title="Delete account">
+<span class="material-icons">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Template Preview Modal -->
+<div class="modal-overlay" id="template-modal">
+<div class="modal-container">
+<div class="modal-header">
+<h2 class="modal-title" id="modal-title">Template Title</h2>
+<button class="close-modal" id="close-modal">×</button>
+</div>
+<div class="modal-preview">
+<img alt="Template Demo" id="modal-demo" src="https://z3n-aiagent-hybrid.zendesk.com/hc/theming_assets/01JQVA86GVXPSJ9Y8PB0VJSKKY"/>
+</div>
+<div class="modal-content">
+<p class="template-description" id="modal-description">
+          This template provides a pre-configured environment for demonstrating industry-specific workflows and features.
+        </p>
+<div class="configuration-section">
+<h3 class="section-title">Special Configurations</h3>
+<div class="checkbox-group">
+<label class="checkbox-container">
+              Enable Ticket Scheduler
+              <input name="enable_scheduler" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+              Install OneView App
+              <input name="install_oneview" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+              Import historical data
+              <input id="import-data-checkbox" name="import_data" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+</div>
+<div id="date-range-container" style="display: none; margin-left: 28px; margin-bottom: 16px;">
+<div class="date-range">
+<input class="date-input" placeholder="Start date" type="date"/>
+<input class="date-input" placeholder="End date" type="date"/>
+</div>
+</div>
+</div>
+<div class="configuration-section">
+<h3 class="section-title">Enable EAP Features</h3>
+<div class="checkbox-group">
+<label class="checkbox-container">
+              AI Powered App Builder
+              <input name="ai_app_builder" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+              Knowledge Graph
+              <input name="knowledge_graph" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+              Smart Reports
+              <input name="smart_reports" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+              Action Builder
+              <input name="action_builder" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+<label class="checkbox-container">
+              Agentic Bots
+              <input name="agentic_bots" type="checkbox"/>
+<span class="checkmark"></span>
+</label>
+</div>
+</div>
+<div class="modal-actions">
+<button class="primary-button" id="create-instance-button">Create New Instance</button>
+<button class="secondary-button" id="cancel-button">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="toast-notification" id="toast-notification">
+<div class="toast-icon">
+<span class="material-icons">check_circle</span>
+</div>
+<div class="toast-message">
+<div class="toast-title">New Account Created</div>
+<div class="toast-content" id="toast-content">z3n-my_demo_account.zendesk.com</div>
+</div>
+<button class="toast-close" id="toast-close">
+<span class="material-icons">close</span>
+</button>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Page navigation
+      const templatesTab = document.getElementById('templates-tab');
+      const accountsTab = document.getElementById('accounts-tab');
+      const templatesPage = document.getElementById('templates-page');
+      const accountsPage = document.getElementById('cloned-accounts-page');
+      
+      templatesTab.addEventListener('click', function() {
+        templatesTab.classList.add('active');
+        accountsTab.classList.remove('active');
+        templatesPage.style.display = 'block';
+        accountsPage.style.display = 'none';
+      });
+      
+      accountsTab.addEventListener('click', function() {
+        accountsTab.classList.add('active');
+        templatesTab.classList.remove('active');
+        accountsPage.style.display = 'block';
+        templatesPage.style.display = 'none';
+      });
+      
+      // Category filtering
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      const templateCards = document.querySelectorAll('.template-card');
+      const emptyState = document.getElementById('empty-state');
+      const searchInput = document.getElementById('search-input');
+      
+      let activeFilter = 'all';
+      let searchQuery = '';
+      
+      function filterTemplates() {
+        let visibleCount = 0;
+        
+        templateCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          const title = card.querySelector('.template-title').textContent.toLowerCase();
+          const subtitle = card.querySelector('.template-subtitle').textContent.toLowerCase();
+          
+          const matchesCategory = activeFilter === 'all' || category === activeFilter;
+          const matchesSearch = searchQuery === '' || 
+                               title.includes(searchQuery) || 
+                               subtitle.includes(searchQuery);
+          
+          if (matchesCategory && matchesSearch) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Show/hide empty state
+        if (visibleCount === 0) {
+          emptyState.style.display = 'block';
+        } else {
+          emptyState.style.display = 'none';
+        }
+      }
+      
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          filterTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          
+          activeFilter = tab.getAttribute('data-category');
+          filterTemplates();
+        });
+      });
+      
+      searchInput.addEventListener('input', function() {
+        searchQuery = this.value.toLowerCase();
+        filterTemplates();
+      });
+      
+      // Modal functionality
+      const templateModal = document.getElementById('template-modal');
+      const closeModal = document.getElementById('close-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
+      
+      // Open modal when clicking on template card
+      templateCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const title = card.querySelector('.template-title').textContent;
+          const category = card.getAttribute('data-category');
+          
+          modalTitle.textContent = title;
+          
+          // Set description based on template category
+          let description = '';
+          switch(category) {
+            case 'retail':
+              description = 'A complete retail demonstration environment with pre-configured products, customer profiles, and order management workflows tailored to showcase retail-specific features.';
+              break;
+            case 'tech':
+              description = 'A technology company demonstration environment with subscription management, user roles, and analytics dashboards tailored to showcase SaaS-specific features.';
+              break;
+            case 'travel':
+              description = 'A travel and hospitality demonstration environment with booking management, itineraries, and customer profiles tailored to showcase travel-specific features.';
+              break;
+            case 'finance':
+              description = 'A financial services demonstration environment with account management, transaction history, and security features tailored to showcase finance-specific workflows.';
+              break;
+            case 'healthcare':
+              description = 'A healthcare demonstration environment with patient records, appointment scheduling, and compliance features tailored to showcase healthcare-specific workflows.';
+              break;
+            default:
+              description = 'This template provides a pre-configured environment for demonstrating industry-specific workflows and features.';
+          }
+          
+          modalDescription.textContent = description;
+          
+          // Reset checkboxes
+          const checkboxes = templateModal.querySelectorAll('input[type="checkbox"]');
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = false;
+          });
+          
+          // Show date range if import data is checked
+          document.getElementById('date-range-container').style.display = 'none';
+          
+          templateModal.style.display = 'flex';
+        });
+      });
+      
+      // Import data checkbox handler
+      const importDataCheckbox = document.getElementById('import-data-checkbox');
+      const dateRangeContainer = document.getElementById('date-range-container');
+      
+      importDataCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+          dateRangeContainer.style.display = 'block';
+        } else {
+          dateRangeContainer.style.display = 'none';
+        }
+      });
+      
+      // Close modal
+      closeModal.addEventListener('click', function() {
+        templateModal.style.display = 'none';
+      });
+      
+      document.getElementById('cancel-button').addEventListener('click', function() {
+        templateModal.style.display = 'none';
+      });
+      
+      // Close modal when clicking outside
+      window.addEventListener('click', function(event) {
+        if (event.target === templateModal) {
+          templateModal.style.display = 'none';
+        }
+      });
+      
+      // Create instance button
+      const createInstanceButton = document.getElementById('create-instance-button');
+      const toastNotification = document.getElementById('toast-notification');
+      const toastContent = document.getElementById('toast-content');
+      const toastClose = document.getElementById('toast-close');
+      
+      createInstanceButton.addEventListener('click', function() {
+        // Generate a random account name based on the selected template
+        const templateName = modalTitle.textContent.toLowerCase().replace(/[^a-z0-9]/g, '_');
+        const randomId = Math.floor(Math.random() * 1000);
+        const accountUrl = `z3n-${templateName}_${randomId}.zendesk.com`;
+        
+        // Update toast content
+        toastContent.textContent = accountUrl;
+        
+        // Hide modal
+        templateModal.style.display = 'none';
+        
+        // Show toast notification
+        toastNotification.classList.add('show');
+        
+        // Hide toast after 5 seconds
+        setTimeout(function() {
+          toastNotification.classList.remove('show');
+        }, 5000);
+      });
+      
+      // Close toast
+      toastClose.addEventListener('click', function() {
+        toastNotification.classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</div></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-demo-services');
+    const content = document.getElementById('demo-services-content');
+    if (toggleButton && content) {
+      toggleButton.addEventListener('click', () => {
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      });
+    }
+  });
+</script>
+</body></html>
